@@ -25,6 +25,7 @@ public class App {
             new Thread(cars[i]).start();
         }
         System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка началась!!!");
+        // Ожидается завершение всех потоков
         cdl_finish.await();
         System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка закончилась!!!");
     }

@@ -8,6 +8,7 @@ public class Car implements Runnable {
     private Race race;
     private int speed;
     private String name;
+    // Так как Вы указали, что static не стоит использовать, пришлось выкручиваться сеттерами, к которым обращаюся в App
     CyclicBarrier cyclicBarrier;
     CountDownLatch cdl_finish;
 
@@ -47,6 +48,7 @@ public class Car implements Runnable {
         for (int i = 0; i < race.getStages().size(); i++) {
             race.getStages().get(i).go(this);
         }
+        // При выполнении, счетчик уменьшается на 1
         cdl_finish.countDown();
     }
 }
